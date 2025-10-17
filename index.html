@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>축제 숏츠 리포터 양성 & 컬러 코칭 클래스 | 안산</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            color: #2d3748;
+            font-weight: 700;
+        }
+
+        .problem-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .problem-box {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .problem-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-card .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .program-features {
+            background: #f7fafc;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .target-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .target-box {
+            background: rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .target-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .pricing-section {
+            background: #fff;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 25px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .pricing-card h3 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .price-tag {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .price-features {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .testimonial-section {
+            background: #f7fafc;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #667eea;
+            margin-top: 20px;
+        }
+
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .section-title {
+                font-size: 1.7em;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🎨 축제 숏츠 리포터 양성<br>& 컬러 코칭 클래스</h1>
+            <p>기술과 심리가 만나는 안산 맞춤형 자기계발</p>
+            <p style="font-size: 1.1em; opacity: 0.9;">퇴근 후 당신의 시간을 특별하게 만드세요</p>
+            <a href="#apply" class="cta-button">지금 시작하기 →</a>
+        </div>
+    </section>
+
+    <section class="section problem-section">
+        <h2 class="section-title">이런 고민 있으시죠?</h2>
+        <div class="problem-box">
+            <h3>😔 퇴근 후 의미 있는 시간을 보내고 싶은데...</h3>
+            <p>직장 생활의 소진감, 새로운 도전이 필요하지만 시간과 장소의 제약이 너무 크다</p>
+        </div>
+        <div class="problem-box">
+            <h3>💭 심리적 안정과 실용적 기술을 동시에?</h3>
+            <p>힐링만으로는 부족하고, 기술만 배우기엔 동기부여가 안 된다</p>
+        </div>
+        <div class="problem-box">
+            <h3>🏙️ 안산에서 찾기 어려운 차별화된 교육</h3>
+            <p>지역 특성에 맞는, 나를 이해하고 성장시키는 프로그램이 없다</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">우리의 솔루션</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="icon">📱</div>
+                <h3>숏츠 제작 기술</h3>
+                <p>안산 축제 현장에서 직접 촬영하고 편집하는 실전 노하우를 배웁니다</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">🎨</div>
+                <h3>휴먼컬러 진단</h3>
+                <p>나만의 색을 찾고 심리적 자기 이해를 높이는 컬러테라피 코칭</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">🤝</div>
+                <h3>동네 커뮤니티</h3>
+                <p>같은 지역, 비슷한 고민을 가진 사람들과 함께 성장하는 네트워크</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section program-features">
+        <h2 class="section-title">프로그램 특징</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h4>🎪 축제 현장 실습</h4>
+                <p>안산시 문화의 광장 축제 등 지역 이벤트에서 실전 경험</p>
+            </div>
+            <div class="feature-item">
+                <h4>⏰ 유연한 시간</h4>
+                <p>직장인을 위한 퇴근 후 저녁 시간대 운영</p>
+            </div>
+            <div class="feature-item">
+                <h4>🎯 맞춤형 코칭</h4>
+                <p>휴먼컬러 기반 개인별 콘텐츠 아이디어 제공</p>
+            </div>
+            <div class="feature-item">
+                <h4>📈 경력 전환 지원</h4>
+                <p>콘텐츠 크리에이터로의 경력 설계 상담</p>
+            </div>
+            <div class="feature-item">
+                <h4>🏆 포트폴리오 구축</h4>
+                <p>실제 축제 숏츠 제작으로 포트폴리오 완성</p>
+            </div>
+            <div class="feature-item">
+                <h4>💪 지속 가능한 성장</h4>
+                <p>월 2회 정기 클래스로 꾸준한 발전</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section target-section">
+        <h2 class="section-title">이런 분들께 추천합니다</h2>
+        <div class="target-box">
+            <h3>📍 안산시 상록구/단원구 거주</h3>
+            <h3>👔 30~50대 직장인</h3>
+            <p style="font-size: 1.2em; margin-top: 20px;">
+                경력 전환을 고민하는 분 · 심리적 안정이 필요한 분<br>
+                새로운 취미를 시작하고 싶은 분 · 지역 기반 네트워킹을 원하는 분
+            </p>
+        </div>
+    </section>
+
+    <section class="section pricing-section" id="apply">
+        <h2 class="section-title">프로그램 안내</h2>
+        <div class="pricing-card">
+            <h3>🎓 정기 클래스 회원제</h3>
+            <div class="price-tag">월 2회 운영</div>
+            <ul class="price-features">
+                <li>✅ 축제 현장 실습 (월 1회)</li>
+                <li>✅ 숏츠 편집 워크숍 (월 1회)</li>
+                <li>✅ 개인별 휴먼컬러 진단 (초회)</li>
+                <li>✅ 커뮤니티 네트워킹</li>
+                <li>✅ 온라인 자료 및 피드백</li>
+            </ul>
+            <a href="#contact" class="cta-button" style="margin-top: 30px;">참여 신청하기</a>
+        </div>
+    </section>
+
+    <section class="section testimonial-section">
+        <h2 class="section-title">MVP 테스트 목표</h2>
+        <div class="testimonial">
+            <p style="font-size: 1.1em;">
+                <strong>🎯 검증 목표:</strong><br>
+                안산시 축제 현장에서 '휴먼컬러 기반 숏츠 아이디어 기획' 유료 부스 운영 (10분 코칭)
+            </p>
+            <p style="margin-top: 20px; font-size: 1.1em;">
+                <strong>📊 성공 지표:</strong> 유료 전환 시 재참여 의사율 60% 이상 달성
+            </p>
+        </div>
+    </section>
+
+    <section class="final-cta" id="contact">
+        <h2>지금 바로 시작하세요</h2>
+        <p style="font-size: 1.3em; margin-bottom: 40px;">
+            안산에서 당신의 새로운 가능성을 발견하는 시간<br>
+            기술과 심리가 만나는 특별한 경험
+        </p>
+        <a href="mailto:contact@example.com" class="cta-button">문의하기 →</a>
+    </section>
+
+    <footer class="footer">
+        <p><strong>축제 숏츠 리포터 양성 & 컬러 코칭 클래스</strong></p>
+        <p style="margin-top: 10px; opacity: 0.8;">안산시 기반 융합형 교육 콘텐츠 전문가</p>
+        <p style="margin-top: 20px; font-size: 0.9em;">
+            협력 기관: 안산시 평생학습관 · 고용24
+        </p>
+    </footer>
+</body>
+</html>
